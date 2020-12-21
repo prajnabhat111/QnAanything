@@ -71,6 +71,12 @@ def asked_questions():
 	if(user2=="" or user2==None):
 	   return render_template('login.html')
 	q = form.q.data
+	app.logger.info(q)
+	cur=mysql.connection.cursor()
+	ress = cur.execute("select * from quiz where ques=%s",[q])
+	app.logger.info(q," this ",ress)
+	if(ress>=1):
+		return render_template('message.html',mesage="Hey this question is already posted you can check it in the home tab...")
 	a = form.a.data
 	b = form.b.data
 	c = form.c.data
