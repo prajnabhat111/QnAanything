@@ -1,0 +1,215 @@
+img{
+  height:auto;
+  width: 150px;
+  border-radius: 50px;
+}
+body{
+  background-color: lightblue;
+  overflow-y: scroll;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+li a{
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  background-color: #111;
+}
+li:nth-last-child(1){
+  float: right;
+}
+li:nth-last-child(2){
+  float: right;
+}
+h1{
+  border-top: 150px;
+  font-family: fantasy;
+}
+img.intro{
+  width: 200px;
+  height: auto;
+  justify-content: center;
+  margin-top: auto;
+  border-radius: 20px;
+}
+div.row{
+  height: 300px;
+  width: 75%;
+  background-color: black;
+  display: flex;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  margin-left: auto;
+}
+div.row1{
+  height: 300px;
+  width: 75%;
+  background-color: black;
+  display: flex;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  margin-right: auto;
+}
+div.column{
+  flex: 33.33%;
+  padding: 5px;
+  padding-left: 150px;
+}
+div.details{
+  color: white;
+  margin-left: auto;
+  margin-top: auto;
+}
+
+hr{
+  border-top: 2px solid black;
+}
+ul.contactus{
+  background-color: lightblue;
+  margin-left: 100px;
+}
+li.b{
+  color: black;
+}
+li.b:last-child{
+  float: left;
+}
+img.logo{
+  width: 150px;
+  height: auto;
+  border-radius: 150px;
+}
+img.homepage{
+  width: 100px;
+  height: auto;
+  border-radius: 150px;
+}
+
+div.col{
+  float: left;
+  width: 33%;
+}
+div.contactrow:after{
+  display: table;
+  clear: both;
+}
+.card{
+  color: #000;
+  background-color: white;
+  margin-bottom: 10px;
+  padding:auto;
+  width: 50%;
+  height: 200px;
+  border-radius: 10px;
+  font-size: 24px;
+  align-self: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+}
+.card:hover{
+  background-color: darkcyan;
+}
+
+.coll {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.roww:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.box{
+  background-color: white;
+  color: #000;
+  height: auto;
+  width: 70%;
+  margin-top: 50px;
+  font-size: 24px;
+
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+}
+.content{
+  margin-top: 50px;
+}
+.options:last-child{
+  color: black;
+  justify-content: center;
+  float: left;
+}
+.options{
+  font-size: 16px;
+  font-style: oblique;
+  float:left;
+}
+.form1{
+  background-color: white;
+  color: #000;
+  width: 70%;
+}
+textarea{
+  margin-top: 20px;
+  width: 90%;
+  height: 200px;
+}
+button:hover{
+  background-color: darkcyan;
+}
+button{
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 5px;
+  margin-bottom: 10px;
+  font-style: italic;
+  margin-top: 10px;
+}
+.mesage{
+  font-size: 25px;
+}
+.logincred{
+  margin-top: 150px;
+  width: 20%;
+  height: auto;
+  background-color: white;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.otherans{
+  width: 70%;
+  overflow: scroll;
+  border: solid black 2px;
+}
+.acard{
+  color: #000;
+  background-color: white;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding:auto;
+  height: auto;
+  font-size: 16px;
+  align-self: left;
+
+  display: flex;
+  flex-direction: column;
+  justify-content:left;
+}

@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="mesage">
+
+<div onclick="goback()" style="color:blue;"><u>{{mesage}}</div>
+
+<script type="text/javascript">
+  function goback(){
+    window.history.back();
+  }
+</script>
+</div>
+{% endblock %}

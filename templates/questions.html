@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block body %}
+<center>
+<h1>Post your query here to get help from the tech enthusiasts!</h1>
+<div class="box">
+<form class="ask_ques" action="{{url_for('asked_questions')}}" method="post">
+  <textarea id="ask_q" name="q" placeholder="Type your question here!" required ></textarea>
+  <input type="text" name="option1" placeholder="option a"/>
+  <input type="text" name="option2" placeholder="option b"/>
+  <input type="text" name="option3" placeholder="option c"/>
+  <input type="text" name="option4" placeholder="option d"/>
+  <input type="hidden" id="user2" name="user2"/>
+  <script type="text/javascript">
+    auth.onAuthStateChanged(function(user){
+		if(user){
+  		document.getElementById('user2').value = user.email;
+		}
+  });
+  </script>
+  <center><button type="submit" name="button">Submit</button></center>
+</form>
+
+</div>
+
+
+{% endblock %}

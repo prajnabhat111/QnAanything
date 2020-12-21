@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h2> <center> WELCOME TO</center></h2>
+<center>  <img class="homepage" src="{{ url_for('static', filename= 'images/qnalogo.png') }}" alt="logo">
+
+	<h3>Questions</h3>
+  	<div class="table" id="c">
+	  </div>
+
+		<script type="text/javascript">
+		    function cardClicked(q_id){
+					location.href = "question_page?qid="+q_id;
+				}
+		</script>
+
+	<script type="text/javascript" src="{{ url_for('static', filename="javascript/main.js")}}"></script>
+
+	{% for question in questions %}
+		<script type="text/javascript">
+			table.appendChild(createCard({{question.qid}},"{{question.ques}}"));
+		</script>
+	{% endfor %}
+
+{% endblock %}

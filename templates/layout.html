@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<title>My Flask App</title>
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename= 'css/homecss.css') }}">
+</head>
+<body>
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+
+	<script type="text/javascript">
+
+	// Your web app's Firebase configuration
+	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	var firebaseConfig = {
+	  apiKey: "AIzaSyAfuLHHpkKIZ6tZJwRe9MAO-Y6MaCU02Jg",
+	  authDomain: "duplicate-comment-detect.firebaseapp.com",
+	  projectId: "duplicate-comment-detect",
+	  storageBucket: "duplicate-comment-detect.appspot.com",
+	  messagingSenderId: "214590733683",
+	  appId: "1:214590733683:web:a6753e55806c07bf5f5906",
+	  measurementId: "G-5V07SVHLZ8"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+	const auth = firebase.auth();
+	const db = firebase.firestore();
+	</script>
+
+  <ul>
+  <li><a class="active" href="{{ url_for('index') }}">Home</a></li>
+  <li><a href="{{ url_for('about') }}">About</a></li>
+  <li><a href="{{url_for('questions')}}">Ask Questions</a></li>
+	<li><a href="{{url_for('signup')}}">SignUp</a></li>
+  <li id ="loginandout"><a>
+		<span id="uslg"></span>
+		<script type="text/javascript">
+		auth.onAuthStateChanged(function(user){
+		if(user){
+  		document.getElementById('uslg').innerHTML = "LogOut";
+		} else {
+  		document.getElementById('uslg').innerHTML = "Login";
+		}
+	});
+		</script>
+	</a>
+	</li>
+  </ul>
+	<div class="container">
+		<script type="text/javascript">
+
+		const loginandout = document.querySelector('#loginandout');
+		loginandout.addEventListener('click',(e)=>{
+		  e.preventDefault();
+		  auth.onAuthStateChanged(function(user){
+		  if(user){
+		    auth.signOut().then(()=>{
+		      window.location.href= "{{url_for('index')}}";
+		    });
+		  }else{
+		      window.location.href="{{url_for('login')}}";
+		  }
+		});
+		});
+				</script>
+
+    {% block body %}
+
+		{% endblock %}
+	</div>
+</body>
+</html>

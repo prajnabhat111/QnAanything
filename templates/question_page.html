@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<center><div class="box">
+
+<div class="content">
+{{question.qid}}.      {{question.ques}}
+<br><br>
+<ol>
+<li class="options">{{question.a}}</li><br>
+<li class="options">{{question.b}}</li><br>
+<li class="options">{{question.c}}</li><br>
+<li class="options">{{question.d}}</li>
+</ol>
+</div>
+</div>
+
+<div class="form1">
+<form class="type_ans" action="{{url_for('message')}}" method="post">
+  <textarea id="type_answer" name="ans" placeholder="Type your answer here!" required ></textarea>
+  <input type="hidden" name="id1" value={{question.qid}} />
+  <input type="hidden" name="user" id="user"/>
+  <script type="text/javascript">
+    auth.onAuthStateChanged(function(user){
+		if(user){
+  		document.getElementById('user').value = user.email;
+		}
+  });
+  </script>
+  <center><button type="submit" name="button">Submit</button></center>
+</form>
+
+</div>
+
+<div class="otherans">
+Previous Answers:
+<br>
+  <div class="list_of_answers" id="loa">
+  </div>
+</div>
+<script type="text/javascript">
+  const list_of_answers = document.getElementsByClassName('list_of_answers')[0];
+
+  function createAnsCard(email, u_ans){
+    const acard = document.createElement('div');
+    acard.className = "acard";
+    acard.setAttribute("id",email);
+
+    const em = document.createElement('div');
+    em.innerText = email;
+    const ua = document.createElement('div');
+    ua.innerText = u_ans;
+
+    acard.append(em);
+    acard.append(ua);
+
+    return acard;
+  }
+
+</script>
+
+{% for panswer in panswers %}
+  <script type="text/javascript">
+    list_of_answers.appendChild(createAnsCard("{{panswer.email}}","{{panswer.answers}}"));
+  </script>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h2><center>About Us</center></h2>
+<center><img class="logo" src="{{ url_for('static', filename= 'images/qnalogo.png') }}" alt="logo"></center>
+<h1><center>We believe learning never ends!</center> </h1>
+<p><center>If you give us your questions, we will give you answers! <br> Also you can answer the questions your peers have. Our aim is to
+	provide the best platform for geeks like you! </center></p>
+<div class="row">
+	<div class="column">
+		<div class="details">
+		<h1>Prajna N Bhat</h1>
+		Designer and Developer of the website<br>
+		Final year Computer Science Engineering student<br>
+		At Dyananda Sagar College of Engineering
+	</div>
+	</div>
+	<div class="column">
+<img class ="intro" src="{{ url_for('static', filename= 'images/profiepic.jpg') }}" alt="dp">
+</div>
+</div>
+
+
+<div class="row1">
+	<div class="column">
+<img class ="intro" src="{{ url_for('static', filename= 'images/bg.jpg') }}" alt="dp">
+</div>
+<div class="column">
+	<div class="details">
+	<h1>SaiKrishna</h1>
+	Designer and Developer of the website<br>
+	Final year Computer Science Engineering student<br>
+	At Dyananda Sagar College of Engineering
+</div>
+</div>
+</div>
+
+<div class="row">
+	<div class="column">
+		<div class="details">
+		<h1>Nithyashree</h1>
+		Designer and Developer of the website<br>
+		Final year Computer Science Engineering student<br>
+		At Dyananda Sagar College of Engineering
+	</div>
+	</div>
+	<div class="column">
+<img class ="intro" src="{{ url_for('static', filename= 'images/bg.jpg') }}" alt="dp">
+</div>
+</div>
+
+<hr>
+<div class="contactrow">
+	<div class="col">
+<ul class="contactus">
+	<li class="b">Contact us</li><br><br>
+	<li class="b">Prajna N Bhat</li><br>
+	<li class="b">prajnabhat111@gmail.com</li><br>
+	<li class="b">(+91)2424242424</li>
+</ul>
+</div>
+
+<div class="col"><br><br>
+<ul class="contactus">
+<li class="b">Nithyashree</li><br>
+<li class="b">nitya@gmail.com</li><br>
+<li class="b">(+91)9090909090</li>
+</ul>
+</div>
+
+<div class="col"><br><br>
+<ul class="contactus">
+<li class="b">SaiKrishna</li><br>
+<li class="b">krishna@gmail.com</li><br>
+<li class="b">(+91)7878787878</li>
+</ul>
+</div>
+
+</div>
+{% endblock %}
